@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Mandragora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div class="container">
+        <header>
+            <h1>Bienvenidos a tienda Mandragora</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <section id="inicio">
+            <section id="portada">
+                <a href="#catalogo">
+                    <img src="Img/Portada.png" alt="Portada de Tienda Mandragora">
+                </a>              
+            </section>
+        </section>
+        <section id="catalogo">
+            <h2>Catálogo</h2>
+            <div class="catalogo-grid">
+                <!-- Producto 1 -->
+                <div class="product" id="camara">
+                    <h3>Bolso Cámara</h3>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="carousel-images">
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2962.JPG" alt="Bolso Cámara 1" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2960.JPG" alt="Bolso Cámara 2" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2961.JPG" alt="Bolso Cámara 3" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2963.JPG" alt="Bolso Cámara 4" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2964.JPG" alt="Bolso Cámara 5" class="carousel-image">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+                        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+                    </div>
+                    <p>Un bolso único con diseño de cámara fotográfica.</p>
+                    <p>Precio: $75,000</p>
+                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Bolso%20Cámara%20Referencia001*" 
+                    class="btn" target="_blank">Comprar</a>
+                </div>
+        
+                <!-- Agrega más productos aquí de la misma manera -->
+                
+                <!-- Producto 2: Cassette_90s -->
+<div class="product" id="cassette-90s">
+    <h3>Cassette 90s</h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <div class="image-container">
+                    <img src="Img/Cassette_90s/IMG_2955.JPG" alt="Cassette 90s 1" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_90s/IMG_2953.JPG" alt="Cassette 90s 2" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_90s/IMG_2956.JPG" alt="Cassette 90s 3" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_90s/IMG_2959.JPG" alt="Cassette 90s 4" class="carousel-image">
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+    <p>Un diseño retro inspirado en los cassettes de los años 90.</p>
+    <p>Precio: $70,000</p>
+    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Cassette%2090s%20Referencia002*" 
+    class="btn" target="_blank">Comprar</a>
+</div>
+
+<div class="product" id="cassetteParty">
+    <h3>Cassette Party</h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <div class="image-container">
+                    <img src="Img/Cassette_Party/IMG_2946.JPG" alt="Cassette Party 1" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_Party/IMG_2945.JPG" alt="Cassette Party 2" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_Party/IMG_2948.JPG" alt="Cassette Party 3" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_Party/IMG_2950.JPG" alt="Cassette Party 4" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Cassette_Party/IMG_2952.JPG" alt="Cassette Party 5" class="carousel-image">
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1, 'cassetteParty')">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1, 'cassetteParty')">&#10095;</button>
+    </div>
+    <p>Un accesorio perfecto para tus fiestas con un toque retro.</p>
+    <p>Precio: $85,000</p>
+    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Cassette%20Party*" 
+    class="btn" target="_blank">Comprar</a>
+</div>
+
+<div class="product" id="radioBlanco">
+    <h3>Radio Blanco</h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2926.JPG" alt="Radio Blanco 1" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2928.JPG" alt="Radio Blanco 2" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2930.JPG" alt="Radio Blanco 3" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2931.JPG" alt="Radio Blanco 4" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2926.JPG" alt="Radio Blanco 5" class="carousel-image">
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1, 'radioBlanco')">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1, 'radioBlanco')">&#10095;</button>
+    </div>
+    <p>Un radio elegante y moderno en color blanco, ideal para cualquier espacio.</p>
+    <p>Precio: $75,000</p>
+    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Blanco*" 
+    class="btn" target="_blank">Comprar</a>
+</div>
+
+<div class="product" id="radioNegro">
+    <h3>Radio Negro</h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2936.JPG" alt="Radio Negro 1" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2937.JPG" alt="Radio Negro 2" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2938.JPG" alt="Radio Negro 3" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2940.JPG" alt="Radio Negro 4" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2942.JPG" alt="Radio Negro 5" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2943.JPG" alt="Radio Negro 6" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2944.JPG" alt="Radio Negro 7" class="carousel-image">
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1, 'radioNegro')">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1, 'radioNegro')">&#10095;</button>
+    </div>
+    <p>Un radio sofisticado en color negro, perfecto para ambientes modernos y elegantes.</p>
+    <p>Precio: $75,000</p>
+    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Negro*" 
+    class="btn" target="_blank">Comprar</a>
+</div>
+<!-- aqui puedo agregar mas productos -->
+            </div>
+        </section>
+        
+        <footer>
+            <p>Síguenos en <a href="https://instagram.com">Instagram</a> y <a href="https://wa.me/573118784747">WhatsApp</a></p>
+        </footer>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="prev" onclick="moveLightbox(-1)">&#10094;</button>
+        <button class="next" onclick="moveLightbox(1)">&#10095;</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
