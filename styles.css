@@ -306,3 +306,143 @@ button.next {
 #sobre-nosotros a:hover {
     text-decoration: underline;
 }
+
+/* ESTILO BOTON AÑADIR AL CARRITO */
+
+.btn {
+    display: inline-block;
+    background-color: #FF69B4; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    text-align: center;
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Animación suave al pasar el ratón */
+}
+
+.btn:hover {
+    background-color: #FF1493; /* Cambia el color al pasar el ratón */
+}
+/* Estilos del contenedor del carrito */
+.shopping-cart {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.cart-icon {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-icon:hover {
+    background-color: #0056b3;
+}
+
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.cart-dropdown h3 {
+    margin-top: 0;
+}
+
+#cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #218838;
+}
+
+#cart-dropdown {
+    display: none;
+}
+#cart-dropdown.show {
+    display: block;
+}
+/* Estilos para el botón "Agregar al carrito" */
+.add-to-cart-btn {
+    background-color: #ff6f61;  /* Color de fondo (puedes cambiarlo a uno de tu preferencia) */
+    color: white;               /* Color del texto */
+    border: none;               /* Sin borde */
+    padding: 12px 20px;         /* Espaciado interno */
+    font-size: 16px;            /* Tamaño de la fuente */
+    font-weight: bold;          /* Hacer el texto en negrita */
+    border-radius: 25px;        /* Bordes redondeados */
+    cursor: pointer;           /* Cambiar el cursor al pasar sobre el botón */
+    transition: all 0.3s ease;  /* Transición suave para los efectos */
+    display: inline-flex;       /* Para que esté alineado con el icono si lo tienes */
+    align-items: center;        /* Alinear el texto y el icono (si lo tienes) */
+}
+
+/* Efecto al pasar el cursor por encima */
+.add-to-cart-btn:hover {
+    background-color: #e2574e;  /* Cambio de color de fondo */
+    transform: scale(1.05);      /* Aumenta un poco el tamaño */
+}
+
+/* Efecto al hacer clic */
+.add-to-cart-btn:active {
+    background-color: #c94d43;  /* Color de fondo al hacer clic */
+    transform: scale(0.98);      /* Efecto de contracción */
+}
+
+/* Estilo para el ícono de carrito si lo agregas dentro del botón */
+.add-to-cart-btn i {
+    margin-right: 8px;  /* Espacio entre el ícono y el texto */
+}
+
+/* Estilo del botón si está deshabilitado */
+.add-to-cart-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

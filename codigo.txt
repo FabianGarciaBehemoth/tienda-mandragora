@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Mandragora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Carrito de compras -->
+    <div class="shopping-cart">
+        <button class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </button>
+        <div class="cart-dropdown" id="cart-dropdown">
+            <h3>Carrito de Compras</h3>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <button onclick="limpiarCarrito()">Vaciar Carrito</button>
+            <button class="checkout-btn">Proceder con el pago</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <header>
+            <h1>Bienvenidos a Tienda Mandragora</h1>
+        </header>
+
+        <!-- Navegación -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sección de inicio -->
+        <section id="inicio">
+            <div id="portada">
+                <a href="#catalogo">
+                    <img src="Img/Portada.png" alt="Portada de Tienda Mandragora">
+                </a>
+            </div>
+        </section>
+
+        <!-- Catálogo -->
+        <section id="catalogo">
+            <h2>Catálogo</h2>
+            <div class="catalogo-grid">
+                <!-- Producto 1 -->
+                <div class="product" id="camara">
+                    <h3>Bolso Cámara</h3>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="carousel-images">
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2962.JPG" alt="Bolso Cámara 1" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2960.JPG" alt="Bolso Cámara 2" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2961.JPG" alt="Bolso Cámara 3" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2963.JPG" alt="Bolso Cámara 4" class="carousel-image">
+                                </div>
+                                <div class="image-container">
+                                    <img src="Img/Camara/IMG_2964.JPG" alt="Bolso Cámara 5" class="carousel-image">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+                        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+                    </div>
+                    <p>Un bolso único con diseño de cámara fotográfica.</p>
+                    <p>Precio: $75,000</p>
+                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(1, 'Bolso Cámara', 75000)">Agregar al carrito</button>
+                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Bolso%20Cámara%20Referencia001*"
+                        class="btn" target="_blank">Comprar</a>
+                </div>
+
+                <!-- Otros productos -->
+                <!-- Repite esta estructura para cada producto (cassette 90s, cassette party, radio blanco, radio negro) -->
+
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>Síguenos en <a href="https://instagram.com">Instagram</a> y <a href="https://wa.me/573118784747">WhatsApp</a></p>
+        </footer>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="prev" onclick="moveLightbox(-1)">&#10094;</button>
+        <button class="next" onclick="moveLightbox(1)">&#10095;</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

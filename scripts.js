@@ -1,81 +1,99 @@
-// Función para mover el carrusel de un producto específico
-function moveCarousel(direction, carouselId) {
-    const carousel = document.querySelector(`#${carouselId} .carousel-images`);
-    const totalImages = carousel.children.length;
-    const imageWidth = carousel.children[0].offsetWidth;
+// Carrito de compras
+let carrito = [];
 
-    // Obtener el índice actual
-    let currentTransform = carousel.style.transform || 'translateX(0px)';
-    let currentIndex = Math.abs(parseInt(currentTransform.replace('translateX(', '').replace('px)', '')) / imageWidth);
-
-    // Calcular el nuevo índice
-    currentIndex = (currentIndex + direction + totalImages) % totalImages;
-
-    // Mover el carrusel
-    carousel.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+function agregarAlCarrito(id, nombre, precio) {
+    const producto = carrito.find(item => item.id === id);
+    if (producto) {
+        producto.cantidad++;
+    } else {
+        carrito.push({ id, nombre, precio, cantidad: 1 });
+    }
+    actualizarCarrito();
 }
 
-// Función para abrir el lightbox con imágenes específicas del producto
-function openLightbox(img, carouselId) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const carousel = document.querySelector(`#${carouselId} .carousel-images`);
-
-    // Mostrar el lightbox
-    lightbox.style.display = 'flex';
-
-    // Configurar la imagen inicial y el índice
-    lightboxImg.src = img.src;
-    lightboxImg.dataset.index = Array.from(carousel.querySelectorAll('.carousel-image')).indexOf(img);
-    lightboxImg.dataset.carouselId = carouselId;
+function eliminarDelCarrito(id) {
+    carrito = carrito.filter(item => item.id !== id);
+    actualizarCarrito();
 }
 
-// Función para mover las imágenes dentro del lightbox
-function moveLightbox(direction) {
-    const lightboxImg = document.getElementById('lightbox-img');
-    const carouselId = lightboxImg.dataset.carouselId;
-    const carousel = document.querySelector(`#${carouselId} .carousel-images`);
-    const totalImages = carousel.children.length;
-
-    // Obtener el índice actual
-    let currentIndex = parseInt(lightboxImg.dataset.index);
-    currentIndex = (currentIndex + direction + totalImages) % totalImages;
-
-    // Actualizar la imagen del lightbox
-    const newImage = carousel.children[currentIndex].querySelector('img');
-    lightboxImg.src = newImage.src;
-    lightboxImg.dataset.index = currentIndex;
+function restarCantidad(id) {
+    const producto = carrito.find(item => item.id === id);
+    if (producto && producto.cantidad > 1) {
+        producto.cantidad--;
+    }
+    actualizarCarrito();
 }
 
-// Función para cerrar el lightbox
+function sumarCantidad(id) {
+    const producto = carrito.find(item => item.id === id);
+    if (producto) {
+        producto.cantidad++;
+    }
+    actualizarCarrito();
+}
+
+function limpiarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const cartCount = document.getElementById("cart-count");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    carrito.forEach(item => {
+        total += item.precio * item.cantidad;
+        const itemElement = document.createElement("div");
+        itemElement.classList.add("cart-item");
+        itemElement.innerHTML = `
+            <p>${item.nombre} (x${item.cantidad}) - $${item.precio * item.cantidad}</p>
+            <button onclick="restarCantidad(${item.id})">-</button>
+            <button onclick="sumarCantidad(${item.id})">+</button>
+            <button onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
+        `;
+        cartItems.appendChild(itemElement);
+    });
+
+    cartTotal.textContent = `Total: $${total}`;
+    cartCount.textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+}
+
+function toggleCart() {
+    const cartDropdown = document.getElementById("cart-dropdown");
+    cartDropdown.classList.toggle("show");
+}
+
+// Carrusel de imágenes
+function moveCarousel(direction, id) {
+    const carousel = document.querySelector(`#${id} .carousel-images`);
+    const scrollAmount = carousel.offsetWidth;
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+// Lightbox
+let currentImageIndex = 0;
+let lightboxImages = [];
+
+function openLightbox(images, index) {
+    lightboxImages = images;
+    currentImageIndex = index;
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightbox.style.display = "flex";
+    lightboxImg.src = lightboxImages[currentImageIndex];
+}
+
 function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none';
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
 }
 
-// Añadir funcionalidad de apertura al hacer clic en la imagen de cada carrusel
-document.querySelectorAll('.carousel-images img').forEach((img) => {
-    const carouselId = img.closest('.product').id;
-    img.addEventListener('click', () => openLightbox(img, carouselId));
-});
-
-// Añadir eventos de navegación para el carrusel
-document.querySelectorAll('.product').forEach((product) => {
-    const productId = product.id;
-
-    product.querySelector('.prev').addEventListener('click', () => moveCarousel(-1, productId));
-    product.querySelector('.next').addEventListener('click', () => moveCarousel(1, productId));
-});
-
-// Añadir eventos de navegación en el lightbox
-document.getElementById('lightbox-prev').addEventListener('click', () => moveLightbox(-1)); // Flecha izquierda
-document.getElementById('lightbox-next').addEventListener('click', () => moveLightbox(1));  // Flecha derecha
-document.getElementById('lightbox-close').addEventListener('click', closeLightbox); // Cerrar lightbox
-
-// Habilitar navegación automática en los carruseles
-document.querySelectorAll('.product').forEach((product) => {
-    const productId = product.id;
-
-    // Navegar automáticamente cada 5 segundos
-    setInterval(() => moveCarousel(1, productId), 5000);
-});
+function moveLightbox(direction) {
+    currentImageIndex = (currentImageIndex + direction + lightboxImages.length) % lightboxImages.length;
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = lightboxImages[currentImageIndex];
+}
