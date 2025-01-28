@@ -68,29 +68,48 @@ nav ul li a {
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.carousel {
+    max-width: 400px; /* Ajusta según sea necesario */
     overflow: hidden;
-    width: 100%;
+    margin: auto;
 }
 
 .carousel-images {
     display: flex;
+    transition: transform 0.5s ease-in-out; /* Suaviza el movimiento entre imágenes */
 }
 
-.carousel-images .image-container {
+.image-container {
     min-width: 100%;
 }
 
-.carousel-images img {
+.carousel-image {
     width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
+    display: block;
 }
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
 
 /* Botones de control del carrusel */
 button.prev, button.next {
@@ -233,14 +252,16 @@ button.next {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #ff6f61;
+    background-color: #01a10f;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
+
+/* color al pasar mouse por boton
 .product .btn:hover {
-    background-color: #ff8a75;
+    background-color: #01ff4d;
 }
 
 /* Sección Contacto */
@@ -324,7 +345,7 @@ button.next {
 }
 
 .btn:hover {
-    background-color: #FF1493; /* Cambia el color al pasar el ratón */
+    background-color: #00ff6a; /* Cambia el color al pasar el ratón */
 }
 /* Estilos del contenedor del carrito */
 .shopping-cart {
@@ -426,7 +447,7 @@ button.next {
 
 /* Efecto al pasar el cursor por encima */
 .add-to-cart-btn:hover {
-    background-color: #e2574e;  /* Cambio de color de fondo */
+    background-color: #53e24e;  /* Cambio de color de fondo */
     transform: scale(1.05);      /* Aumenta un poco el tamaño */
 }
 
@@ -445,4 +466,32 @@ button.next {
 .add-to-cart-btn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+
+/* BOTON VACIAR CARRITO */
+
+/* Botón "Vaciar Carrito" */
+.btn-clear-cart {
+    background-color: #dc3545; /* Rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Manita al pasar el mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos de transición */
+}
+
+/* Efecto al pasar el mouse */
+.btn-clear-cart:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+    transform: scale(1.05); /* Agrandar ligeramente */
+}
+
+/* Efecto al hacer clic */
+.btn-clear-cart:active {
+    background-color: #a71d2a; /* Rojo aún más oscuro */
+    transform: scale(0.95); /* Achicar ligeramente */
 }

@@ -42,25 +42,28 @@ function actualizarCarrito() {
     const cartTotal = document.getElementById("cart-total");
     const cartCount = document.getElementById("cart-count");
 
-    cartItems.innerHTML = "";
+    cartItems.innerHTML = ''; // Limpiar carrito visual
     let total = 0;
 
     carrito.forEach(item => {
         total += item.precio * item.cantidad;
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("cart-item");
-        itemElement.innerHTML = `
-            <p>${item.nombre} (x${item.cantidad}) - $${item.precio * item.cantidad}</p>
+
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = `
+            <p>${item.nombre} x${item.cantidad}</p>
+            <p>$${(item.precio * item.cantidad).toLocaleString()}</p>
             <button onclick="restarCantidad(${item.id})">-</button>
             <button onclick="sumarCantidad(${item.id})">+</button>
             <button onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
         `;
-        cartItems.appendChild(itemElement);
+        cartItems.appendChild(itemDiv);
     });
 
-    cartTotal.textContent = `Total: $${total}`;
-    cartCount.textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+    cartTotal.textContent = `Total: $${total.toLocaleString()}`;
+    cartCount.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 }
+
 
 function toggleCart() {
     const cartDropdown = document.getElementById("cart-dropdown");
@@ -68,11 +71,32 @@ function toggleCart() {
 }
 
 // Carrusel de imágenes
-function moveCarousel(direction, id) {
-    const carousel = document.querySelector(`#${id} .carousel-images`);
-    const scrollAmount = carousel.offsetWidth;
-    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-}
+let currentIndex = 0; // Índice de la imagen actual
+const moveCarousel = (direction, carouselId) => {
+    const carousel = document.querySelector(`#${carouselId} .carousel-images`);
+    const images = carousel.querySelectorAll('.image-container');
+    const totalImages = images.length;
+
+    // Ocultar la imagen actual
+    images[currentIndex].style.display = 'none';
+
+    // Actualizar el índice
+    currentIndex = (currentIndex + direction + totalImages) % totalImages;
+
+    // Mostrar la nueva imagen
+    images[currentIndex].style.display = 'block';
+};
+
+// Inicializar el carrusel (mostrar solo la primera imagen de cada carrusel al cargar la página)
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.carousel-images').forEach(carousel => {
+        const images = carousel.querySelectorAll('.image-container');
+        images.forEach((img, index) => {
+            img.style.display = index === 0 ? 'block' : 'none';
+        });
+    });
+});
+
 
 // Lightbox
 let currentImageIndex = 0;
