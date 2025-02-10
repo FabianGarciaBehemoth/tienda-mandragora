@@ -147,7 +147,7 @@ button.next {
     }
 }
 
-/* Lightbox */
+/* Lightbox: Asegurar que está en la parte superior */
 .lightbox {
     position: fixed;
     top: 0;
@@ -158,21 +158,54 @@ button.next {
     display: none;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    z-index: 1000; /* Asegurar que esté por encima de todo */
 }
 
+/* Imagen dentro del Lightbox */
 .lightbox img {
     max-width: 80%;
     max-height: 80%;
-    cursor: pointer;
+    border-radius: 10px;
 }
 
+/* Botón de cierre */
 .lightbox .close {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 30px;
     color: white;
     font-size: 40px;
     cursor: pointer;
+    z-index: 1001; /* Más arriba que el fondo */
+}
+
+/* Botones de navegación */
+.lightbox .prev, .lightbox .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Evita que se vean los otros botones */
+}
+
+.lightbox .prev {
+    left: 20px;
+}
+
+.lightbox .next {
+    right: 20px;
+}
+
+.lightbox .prev:hover, .lightbox .next:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
 }
 
 /* Botones de control en el lightbox */
@@ -256,12 +289,6 @@ button.next {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-}
-
-
-/* color al pasar mouse por boton
-.product .btn:hover {
-    background-color: #01ff4d;
 }
 
 /* Sección Contacto */
@@ -395,9 +422,10 @@ button.next {
 
 .cart-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: center;  /* Alinea la imagen y el texto en la misma línea */
+    gap: 10px; /* Espacio entre la imagen y la descripción */
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Línea divisoria opcional */
 }
 
 .cart-item button {
@@ -432,7 +460,7 @@ button.next {
 }
 /* Estilos para el botón "Agregar al carrito" */
 .add-to-cart-btn {
-    background-color: #ff6f61;  /* Color de fondo (puedes cambiarlo a uno de tu preferencia) */
+    background-color: #333333;  /* Color de fondo (puedes cambiarlo a uno de tu preferencia) */
     color: white;               /* Color del texto */
     border: none;               /* Sin borde */
     padding: 12px 20px;         /* Espaciado interno */
@@ -447,7 +475,7 @@ button.next {
 
 /* Efecto al pasar el cursor por encima */
 .add-to-cart-btn:hover {
-    background-color: #53e24e;  /* Cambio de color de fondo */
+    background-color: #b9b8b8;  /* Cambio de color de fondo */
     transform: scale(1.05);      /* Aumenta un poco el tamaño */
 }
 
@@ -473,7 +501,7 @@ button.next {
 
 /* Botón "Vaciar Carrito" */
 .btn-clear-cart {
-    background-color: #dc3545; /* Rojo */
+    background-color: #df2e2e; /* Rojo */
     color: white; /* Texto blanco */
     border: none; /* Sin borde */
     padding: 10px 20px; /* Espaciado interno */
@@ -494,4 +522,14 @@ button.next {
 .btn-clear-cart:active {
     background-color: #a71d2a; /* Rojo aún más oscuro */
     transform: scale(0.95); /* Achicar ligeramente */
+}
+
+/* tamaño imagen carrito de compras */
+
+.cart-item img {
+    width: 100px;  /* Reducir el tamaño de la imagen */
+    height: px;
+    object-fit: cover; /* Ajustar la imagen dentro del tamaño definido */
+    border-radius: 5px;
+    margin-right: 10px;
 }
