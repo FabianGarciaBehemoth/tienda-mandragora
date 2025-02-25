@@ -79,39 +79,10 @@ function toggleCart() {
     document.getElementById("cart-dropdown").classList.toggle("show");
 }
 
-// Carrusel de imágenes
-let currentIndex = 0;
-let isTransitioning = false;
-
-const moveCarousel = (direction, carouselId) => {
-    if (isTransitioning) return;
-    isTransitioning = true;
-
-    const carousel = document.querySelector(`#${carouselId} .carousel-images`);
-    const images = carousel.querySelectorAll('.image-container');
-    const totalImages = images.length;
-
-    images[currentIndex].style.display = 'none';
-    currentIndex = (currentIndex + direction + totalImages) % totalImages;
-    images[currentIndex].style.display = 'block';
-
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 500);
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.carousel-images').forEach(carousel => {
-        const images = carousel.querySelectorAll('.image-container');
-        images.forEach((img, index) => {
-            img.style.display = index === 0 ? 'block' : 'none';
-        });
-    });
-});
 
 // Lightbox
 document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".product img");
+    const productos = document.querySelectorAll(".product"); // Selecciona cada producto
     const lightbox = document.createElement("div");
     lightbox.classList.add("lightbox");
     document.body.appendChild(lightbox);
@@ -131,11 +102,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevButton = lightbox.querySelector(".prev");
     const nextButton = lightbox.querySelector(".next");
 
-    images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-            imageList = Array.from(images).map(image => image.src);
-            currentImageIndex = index;
-            showImage();
+    productos.forEach(producto => {
+        const images = producto.querySelectorAll("img"); // Solo imágenes del producto
+        images.forEach((img, index) => {
+            img.addEventListener("click", () => {
+                imageList = Array.from(images).map(image => image.src); // Captura solo las imágenes de este producto
+                currentImageIndex = index; // Asegura que inicie en la imagen seleccionada
+                showImage();
+            });
         });
     });
 

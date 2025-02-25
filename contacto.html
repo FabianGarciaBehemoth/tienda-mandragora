@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Mandragora</title>
+    <title>Tienda Mandragora</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#catalogo">Catálogo</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Bienvenidos a tienda Mandragora</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#catalogo">Catálogo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="sobre-nosotros.html" class="active">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Carrito de compras -->
+        <div class="shopping-cart">
+            <button class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </button>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Carrito de Compras</h3>
+                <div id="cart-items"></div>
+                <div id="cart-total">Total: $0</div>
+                <button class="btn-clear-cart" onclick="limpiarCarrito()">Vaciar Carrito</button>
+                <button class="checkout-btn">Proceder con el pago</button>
+            </div>
+        </div>
 
     <section id="inicio">
         <div class="container">
