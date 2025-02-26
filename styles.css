@@ -249,10 +249,16 @@ button.next {
 }
 .catalogo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas automáticas */
-    gap: 20px; /* Espacio entre los productos */
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el tamaño mínimo y máximo */
+    gap: 10px; /* Espacio entre productos */
 }
+
+@media (max-width: 768px) { /* Para pantallas pequeñas */
+    .catalogo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
 
 .product {
     border: 1px solid #ccc;
@@ -463,10 +469,10 @@ button.next {
     background-color: #333333;  /* Color de fondo (puedes cambiarlo a uno de tu preferencia) */
     color: white;               /* Color del texto */
     border: none;               /* Sin borde */
-    padding: 12px 20px;         /* Espaciado interno */
-    font-size: 16px;            /* Tamaño de la fuente */
+    padding: 4px 9px;         /* Espaciado interno */
+    font-size: 12px;            /* Tamaño de la fuente */
     font-weight: bold;          /* Hacer el texto en negrita */
-    border-radius: 25px;        /* Bordes redondeados */
+    border-radius: 15px;        /* Bordes redondeados */
     cursor: pointer;           /* Cambiar el cursor al pasar sobre el botón */
     transition: all 0.3s ease;  /* Transición suave para los efectos */
     display: inline-flex;       /* Para que esté alineado con el icono si lo tienes */
@@ -532,4 +538,32 @@ button.next {
     object-fit: cover; /* Ajustar la imagen dentro del tamaño definido */
     border-radius: 5px;
     margin-right: 10px;
+}
+
+
+/* LOGO Y TITULO HEADER*/
+
+.header {
+    text-align: center;
+    padding: 1px 0; /* Reduce el espacio arriba y abajo */
+    margin: 0; /* Asegura que no haya márgenes extra */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.store-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0; /* Quita espacio extra alrededor del texto */
 }

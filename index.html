@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Mandragora</title>
+    <meta name="description" content="Tienda Mandragora - Accesorios únicos y retro. Encuentra bolsos en forma de cámara, radios vintage y más.">
+    <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <h1>Bienvenidos a tienda Mandragora</h1>
-        </header>
+        <header class="header">
+            <section class="logo-container">
+                <img src="Img/logo.png" alt="Logo Tienda Mandragora" class="logo">
+                <h1 class="store-name">Bienvenidos a Tienda Mandragora</h1>
+            </section>            
+        </header>        
 
         <!-- Carrito de compras -->
         <div class="shopping-cart">
@@ -24,6 +29,7 @@
                 <div id="cart-items"></div>
                 <div id="cart-total">Total: $0</div>
                 <button class="btn-clear-cart" onclick="limpiarCarrito()">Vaciar Carrito</button>
+                <div id="paypal-button-container"></div>
                 <button class="checkout-btn">Proceder con el pago</button>
             </div>
         </div>
@@ -106,8 +112,8 @@
                         </div>
                     </div>
                     <p>Un diseño retro inspirado en los cassettes de los años 90.</p>
-                    <p>Precio: $70,000</p>
-                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(2, 'Cassette 90s', 70000,'Img/Cassette_90s/IMG_2955.JPG')">
+                    <p>Precio: $85,990</p>
+                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(2, 'Cassette 90s', 85990,'Img/Cassette_90s/IMG_2955.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>
                     <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Cassette%2090s%20Referencia002*" 
@@ -217,5 +223,7 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AS9k_QGWAU6YxH5PfpMNU-wvaCjKJRcbsWfqzF_dZI1luIDTtd4Uv3Q6fw_Xk9qFAn5ApXh7L-JoH6WO&currency=USD"></script>
+    <script src="paypal.js"></script>
 </body>
 </html>
