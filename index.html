@@ -29,10 +29,10 @@
                 <div id="cart-items"></div>
                 <div id="cart-total">Total: $0</div>
                 <button class="btn-clear-cart" onclick="limpiarCarrito()">Vaciar Carrito</button>
-                <div id="paypal-button-container"></div>
-                <button class="checkout-btn">Proceder con el pago</button>
+                <button class="checkout-btn" onclick="irAlCheckout()">Proceder con el pago</button>
             </div>
         </div>
+        
 
         <nav>
             <ul>
@@ -223,8 +223,5 @@
     </div>
 
     <script src="scripts.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AS9k_QGWAU6YxH5PfpMNU-wvaCjKJRcbsWfqzF_dZI1luIDTtd4Uv3Q6fw_Xk9qFAn5ApXh7L-JoH6WO&currency=USD"></script>
-
-    <script src="paypal.js"></script>
 </body>
 </html>

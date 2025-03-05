@@ -1,0 +1,388 @@
+/* Estilos generales */
+body {
+    min-height: 100vh;
+    background: url('background.png');
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;  /* Centra todo verticalmente */
+    align-items: center;      /* Centra todo horizontalmente */
+}
+
+
+
+/* Contenedor principal con dos columnas */
+.checkout-container {
+    width: 100%;
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.7); /* Blanco con 70% de transparencia */
+    display: flex;
+    justify-content: center;  /* Centra verticalmente los elementos */
+    align-items: center;      /* Alinea los elementos internos al centro */
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: auto;
+    padding: 20px; /* Agrega espacio interno */
+}
+
+
+/* Sección izquierda - Resumen de compra */
+.order-summary {
+    flex: 1;
+    padding: 20px;
+    background: #f8f9fa;
+    text-align: center;
+    margin: auto;
+}
+
+.order-summary h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+.total {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* Sección derecha - Formulario de pago */
+.payment-section {
+    flex: 1;
+    padding: 30px;
+    background: #2d89ef;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.payment-section h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#checkout-form input {
+    width: 100%; /* Evita que los campos de entrada causen desplazamiento */
+}
+
+#checkout-form input {
+    width: 90%;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+
+#checkout-form input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Botón de pago */
+.btn-pay {
+    width: 90%;
+    text-align: center;
+}
+
+.btn-pay:hover {
+    background: #009624;
+    transform: scale(1.05);
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+        width: 100%; /* Ajustar bien a la pantalla */
+        padding: 15px;
+    }
+}
+
+.order-summary, .payment-section {
+    width: 100%; /* Asegura que no se expanda demasiado */
+    padding: 15px;
+}
+
+
+    .payment-section {
+        padding: 20px 10px;
+    }
+
+
+    .btn-pay {
+        width: 90%;
+    }
+
+/* Contenedor del logo */
+.payment-header {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 10px; /* Agrega espacio entre el logo y el botón */
+}
+
+/* Ajuste del logo */
+.payment-logo {
+    max-width: 120px;
+    height: auto;
+}
+
+/*ocular botones navegacion */
+
+.lightbox {
+    display: none; /* Oculta el Lightbox por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox .close,
+.lightbox .prev,
+.lightbox .next {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox .close {
+    top: 10px;
+    right: 20px;
+}
+
+.lightbox .prev {
+    left: 10px;
+}
+
+.lightbox .next {
+    right: 10px;
+}
+
+
+/* fondo formulario obtener datos para pagar */
+
+.form-container {
+    background-color: #5e7a9a; /* Azul */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Aumenta el ancho */
+    max-width: 500px; /* Ajusta el tamaño máximo */
+    margin: 0 auto; /* Centra el formulario */
+}
+
+
+.form-container input {
+    background-color: #e8eafb;
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+}
+
+.form-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cart-summary {
+    background-color: #232a35; /* Azul */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+
+/* Estilo para boton de paypal */
+
+#paypal-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/*header */
+
+/* Estilos para el encabezado */
+.header {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    color: #009624; /* Verde */
+    font-size: 28px; /* Tamaño opcional */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Convertir a mayúsculas si deseas */
+}
+
+
+/* Contenedor del logo y título */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center; /* Centrar el logo y el nombre */
+    margin-top: 20px;
+}
+
+/* Estilos del logo */
+.logo {
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: auto;
+    border-radius: 50%; /* Redondear la imagen si es necesario */
+}
+
+/* Estilos del nombre de la tienda */
+.store-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Color del texto */
+    font-family: "Arial", sans-serif;
+}
+
+/* Estilos del header */
+.header {
+    position: relative;
+    text-align: center;
+    padding-top: 50px; /* Deja espacio para el botón */
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+/* Estilos del botón */
+nav ul li a {
+    background-color: #4a4a4a; /* Fondo gris oscuro */
+    color: white;
+    text-decoration: none;
+    font-size: 14px; /* Tamaño de texto reducido */
+    font-weight: bold;
+    padding: 8px 15px; /* Espaciado más pequeño */
+    display: inline-block;
+    border-radius: 20px; /* Bordes redondeados */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: #2a2a2a; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto sutil */
+}
+
+/* estilos formulario*/
+
+/* Estilos generales del formulario */
+#checkout-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para etiquetas */
+#checkout-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Estilos para los inputs y selects */
+#checkout-form input,
+#checkout-form select,
+#checkout-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el textarea */
+#checkout-form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+/* Estilos del botón */
+#checkout-form button {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#checkout-form button:hover {
+    background: #45a049;
+}

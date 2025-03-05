@@ -138,3 +138,90 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+/* integracion pay pal */
+
+document.addEventListener("DOMContentLoaded", function () {
+    let cartItems = JSON.parse(localStorage.getItem("checkoutCart")) || [];
+    let cartSummary = document.getElementById("cart-summary");
+    let cartTotal = document.getElementById("cart-total");
+
+    if (cartItems.length === 0) {
+        cartSummary.innerHTML = "<p>El carrito está vacío.</p>";
+        return;
+    }
+
+    let total = 0;
+    cartSummary.innerHTML = "";
+    cartItems.forEach(item => {
+        let itemElement = document.createElement("p");
+        itemElement.textContent = `${item.nombre} - ${item.cantidad} x $${item.precio}`;
+        cartSummary.appendChild(itemElement);
+        total += item.cantidad * item.precio;
+    });
+
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+    // Integrar PayPal
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: total.toFixed(2)
+                    }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert("Pago exitoso, gracias " + details.payer.name.given_name);
+                localStorage.removeItem("checkoutCart");
+                window.location.href = "index.html"; // Redirigir a la página principal
+            });
+        }
+    }).render("#paypal-button-container");
+});
+
+/* Funcion para el boton proceder a pago, para que vaya de index.html a checkout.html */
+function irAlCheckout() {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío. Agrega productos antes de continuar.");
+        return;
+    }
+
+    // Guardar el carrito en localStorage para pasarlo a la página de pago
+    localStorage.setItem("checkoutCart", JSON.stringify(carrito));
+
+    // Redirigir a la página de checkout
+    window.location.href = "checkout.html";
+}
+
+
+/* Validación del formulario) */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const inputs = document.querySelectorAll("#checkout-form input");
+
+    // Función para verificar si el formulario está completo
+    function formularioCompleto() {
+        for (let input of inputs) {
+            if (input.value.trim() === "") {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Mostrar alerta si faltan datos
+    function validarAntesDePagar(event) {
+        if (!formularioCompleto()) {
+            event.preventDefault(); // Evita el clic en PayPal
+            alert("Por favor, completa todos los campos del formulario antes de pagar.");
+        }
+    }
+
+    // Exportamos la función para usarla en paypal.js
+    window.formularioCompleto = formularioCompleto;
+});
