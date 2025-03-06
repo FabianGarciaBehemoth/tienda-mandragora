@@ -20,6 +20,8 @@ function restarCantidad(id) {
     const producto = carrito.find(item => item.id === id);
     if (producto && producto.cantidad > 1) {
         producto.cantidad--;
+    } else {
+        eliminarDelCarrito(id);
     }
     actualizarCarrito();
 }
@@ -36,6 +38,19 @@ function limpiarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
+// **NUEVA FUNCIÓN**: Guarda el carrito en localStorage
+function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+// **NUEVA FUNCIÓN**: Carga el carrito desde localStorage
+function cargarCarrito() {
+    const carritoGuardado = localStorage.getItem("carrito");
+    if (carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+        actualizarCarrito();
+    }
+}
 
 function actualizarCarrito() {
     const cartItems = document.getElementById("cart-items");
@@ -44,6 +59,7 @@ function actualizarCarrito() {
 
     cartItems.innerHTML = ''; // Limpiar carrito visual
     let total = 0;
+
 
     carrito.forEach(item => {
         total += item.precio * item.cantidad;
@@ -71,9 +87,16 @@ function actualizarCarrito() {
         cartItems.appendChild(itemDiv);
     });
 
+
     cartTotal.textContent = `Total: $${total.toLocaleString()}`;
     cartCount.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+
+    // **Guardar el carrito después de actualizarlo**
+    guardarCarrito();
 }
+
+// Cargar el carrito cuando la página se cargue
+document.addEventListener("DOMContentLoaded", cargarCarrito);
 
 function toggleCart() {
     document.getElementById("cart-dropdown").classList.toggle("show");
@@ -225,3 +248,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Exportamos la función para usarla en paypal.js
     window.formularioCompleto = formularioCompleto;
 });
+
+

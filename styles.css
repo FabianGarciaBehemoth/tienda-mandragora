@@ -567,3 +567,35 @@ button.next {
     font-weight: bold;
     margin: 0; /* Quita espacio extra alrededor del texto */
 }
+
+
+/* estilos para etiquetar cada producto como oferta */
+
+.discount-badge {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;  /* Asegura que se comporte como un bloque en línea */
+    margin-left: 10px; /* Ajusta según sea necesario */
+    vertical-align: middle; /* Alinea mejor con el texto */
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 14px;
+}
+
+.new-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5733;
+}
+
+.product.offer {
+    border: 2px solid rgba(255, 85, 0, 0.888);
+    padding: 10px;
+    border-radius: 8px;
+}

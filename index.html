@@ -57,8 +57,8 @@
             <h2>Catálogo</h2>
             <div class="catalogo-grid">
                 <!-- Producto 1 -->
-                <div class="product" id="camara">
-                    <h3>Bolso Cámara</h3>
+                <div class="product offer" id="camara">
+                    <h3>Bolso Cámara <span class="discount-badge">¡20% OFF!</span></h3>
                     <div class="carousel-container">
                         <div class="carousel">
                             <div class="carousel-images">
@@ -81,9 +81,9 @@
                         </div>                      
                     </div>
                     <p>Un bolso único con diseño de cámara fotográfica.</p>
-                    <p>Precio: $75,000</p>
+                    <p class="price"><span class="old-price">$93,700</span> <span class="new-price">$74,990</span></p>
                     <!-- Botón Agregar al carrito -->
-                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(1, 'Bolso Cámara', 75000,'Img/Camara/IMG_2962.JPG')">
+                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(1, 'Bolso Cámara', 74990,'Img/Camara/IMG_2962.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>
                     <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Bolso%20Cámara%20Referencia001*" 
@@ -153,71 +153,77 @@
                         class="btn" target="_blank">Compra por WhatsApp</a>
                 </div>
 
-                <!-- Producto 4: Radio Blanco -->
-                <div class="product" id="radio-blanco">
-                    <h3>Radio Blanco</h3>
-                    <div class="carousel-container">
-                        <div class="carousel">
-                            <div class="carousel-images">
-                                <div class="image-container">
-                                    <img src="Img/Radio_Blanco/IMG_2926.JPG" alt="Radio Blanco 1" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Blanco/IMG_2928.JPG" alt="Radio Blanco 2" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Blanco/IMG_2930.JPG" alt="Radio Blanco 3" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Blanco/IMG_2931.JPG" alt="Radio Blanco 4" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Blanco/IMG_2933.JPG" alt="Radio Blanco 5" class="carousel-image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Un radio elegante y moderno en color blanco, ideal para cualquier espacio.</p>
-                    <p>Precio: $75,000</p>
-                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(4, 'Radio Blanco', 75000, 'Img/Radio_Blanco/IMG_2926.JPG')">
-                        <i class="fas fa-cart-plus"></i> Agregar al carrito
-                    </button>
-                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Blanco*" 
-                        class="btn" target="_blank">Compra por WhatsApp</a>
+                <!-- Producto 4: Radio Blanco con 30% de Descuento -->
+<div class="product offer" id="radio-blanco">
+    <h3>Radio Blanco <span class="discount-badge">¡30% OFF!</span></h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2926.JPG" alt="Radio Blanco 1" class="carousel-image">
                 </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2928.JPG" alt="Radio Blanco 2" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2930.JPG" alt="Radio Blanco 3" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2931.JPG" alt="Radio Blanco 4" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Blanco/IMG_2933.JPG" alt="Radio Blanco 5" class="carousel-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Un radio elegante y moderno en color blanco, ideal para cualquier espacio.</p>
+    <p class="price"><span class="old-price">$107,130</span> <span class="new-price">$74,990</span></p>
+    <!-- Botón Agregar al carrito -->
+    <button class="add-to-cart-btn" onclick="agregarAlCarrito(4, 'Radio Blanco', 74990, 'Img/Radio_Blanco/IMG_2926.JPG')">
+        <i class="fas fa-cart-plus"></i> Agregar al carrito
+    </button>
+    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Blanco*" 
+        class="btn" target="_blank">Compra por WhatsApp</a>
+</div>
 
-                <!-- Producto 5: Radio Negro -->
-                <div class="product" id="radio-negro">
-                    <h3>Radio Negro</h3>
-                    <div class="carousel-container">
-                        <div class="carousel">
-                            <div class="carousel-images">
-                                <div class="image-container">
-                                    <img src="Img/Radio_Negro/IMG_2936.JPG" alt="Radio Negro 1" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Negro/IMG_2937.JPG" alt="Radio Negro 2" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Negro/IMG_2938.JPG" alt="Radio Negro 3" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Negro/IMG_2940.JPG" alt="Radio Negro 4" class="carousel-image">
-                                </div>
-                                <div class="image-container">
-                                    <img src="Img/Radio_Negro/IMG_2942.JPG" alt="Radio Negro 5" class="carousel-image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Un radio sofisticado en color negro, perfecto para ambientes modernos y elegantes.</p>
-                    <p>Precio: $75,000</p>
-                    <button class="add-to-cart-btn" onclick="agregarAlCarrito(5, 'Radio Negro', 75000, 'Img/Radio_Negro/IMG_2936.JPG')">
-                        <i class="fas fa-cart-plus"></i> Agregar al carrito
-                    </button>
-                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Negro*" 
-                        class="btn" target="_blank">Compra por WhatsApp</a>
+
+<!-- Producto 5: Radio Negro (con 30% de descuento) -->
+<div class="product offer" id="radio-negro">
+    <h3>Radio Negro <span class="discount-badge">¡30% OFF!</span></h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-images">
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2936.JPG" alt="Radio Negro 1" class="carousel-image">
                 </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2937.JPG" alt="Radio Negro 2" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2938.JPG" alt="Radio Negro 3" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2940.JPG" alt="Radio Negro 4" class="carousel-image">
+                </div>
+                <div class="image-container">
+                    <img src="Img/Radio_Negro/IMG_2942.JPG" alt="Radio Negro 5" class="carousel-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Un radio sofisticado en color negro, perfecto para ambientes modernos y elegantes.</p>
+    <p class="price">
+        <span class="old-price">$107,130</span> 
+        <span class="new-price">$74,990</span>
+    </p>
+    <button class="add-to-cart-btn" onclick="agregarAlCarrito(5, 'Radio Negro', 74990, 'Img/Radio_Negro/IMG_2936.JPG')">
+        <i class="fas fa-cart-plus"></i> Agregar al carrito
+    </button>
+    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Negro*" 
+        class="btn" target="_blank">Compra por WhatsApp</a>
+</div>
+
             </div>
         </section>
     </div>
