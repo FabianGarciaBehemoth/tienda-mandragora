@@ -91,8 +91,6 @@
                     <button class="add-to-cart-btn" onclick="agregarAlCarrito(1, 'Bolso Cámara', 74990,'Img/Camara/IMG_2962.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>
-                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Bolso%20Cámara%20Referencia001*" 
-                    class="btn" target="_blank">Compra por WhatsApp</a>
                 </div>                
 
                 <!-- Producto 2: Cassette_90s -->
@@ -121,8 +119,6 @@
                     <button class="add-to-cart-btn" onclick="agregarAlCarrito(2, 'Cassette 90s', 85990,'Img/Cassette_90s/IMG_2955.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>
-                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Cassette%2090s%20Referencia002*" 
-                    class="btn" target="_blank">Compra por WhatsApp</a>
                 </div>
             
 
@@ -155,8 +151,6 @@
                     <button class="add-to-cart-btn" onclick="agregarAlCarrito(3, 'Cassette Party', 90000, 'Img/Cassette_Party/IMG_2946.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>   
-                    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Cassette%20Party*" 
-                        class="btn" target="_blank">Compra por WhatsApp</a>
                 </div>
 
                 <!-- Producto 4: Radio Blanco con 30% de Descuento -->
@@ -189,8 +183,6 @@
     <button class="add-to-cart-btn" onclick="agregarAlCarrito(4, 'Radio Blanco', 79990, 'Img/Radio_Blanco/IMG_2926.JPG')">
         <i class="fas fa-cart-plus"></i> Agregar al carrito
     </button>
-    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Blanco*" 
-        class="btn" target="_blank">Compra por WhatsApp</a>
 </div>
 
 
@@ -226,8 +218,6 @@
     <button class="add-to-cart-btn" onclick="agregarAlCarrito(5, 'Radio Negro', 79990, 'Img/Radio_Negro/IMG_2936.JPG')">
         <i class="fas fa-cart-plus"></i> Agregar al carrito
     </button>
-    <a href="https://wa.me/573118784747?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Radio%20Negro*" 
-        class="btn" target="_blank">Compra por WhatsApp</a>
 </div>
 
 
@@ -307,12 +297,59 @@
 </div>
 
 </div>
-
-
-
-            </div>
+        </div>
         </section>
     </div>
+
+<!-- Botón flotante de WhatsApp -->
+<!-- Botón flotante de WhatsApp -->
+<button class="whatsapp-button" onclick="toggleChat()">
+    <img src="Img/Whatsapplogo.png" alt="WhatsApp" class="whatsapp-logo">
+</button>
+
+<!-- Chat flotante de WhatsApp -->
+<div class="chat-container hidden" id="whatsappChat">
+    <div class="chat-header">
+        <span>Chat con Soporte</span>
+        <button class="close-btn" onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <div class="chat-message bot">¡Hola! ¿Cuál es tu nombre y apellido?</div>
+        <div class="input-container" id="nameContainer">
+            <input type="text" id="name" class="chat-input" 
+                onkeypress="handleKeyPress(event, 'name', 'Genial, ¿de qué ciudad nos contactas?', 'city')">
+            <button class="check-btn" 
+                onclick="sendResponse('name', 'Genial, ¿de qué ciudad nos contactas?', 'city')">✔</button>
+        </div>
+
+        <div class="chat-message bot hidden" id="cityQuestion"></div>
+        <div class="input-container hidden" id="cityContainer">
+            <input type="text" id="city" class="chat-input" 
+                onkeypress="handleKeyPress(event, 'city', 'Gracias, ¿cuál es tu número de contacto?', 'phone')">
+            <button class="check-btn" 
+                onclick="sendResponse('city', 'Gracias, ¿cuál es tu número de contacto?', 'phone')">✔</button>
+        </div>
+
+        <div class="chat-message bot hidden" id="phoneQuestion"></div>
+        <div class="input-container hidden" id="phoneContainer">
+            <input type="tel" id="phone" class="chat-input" 
+                onkeypress="handleKeyPress(event, 'phone', 'Por último, ¿qué mensaje deseas enviar?', 'message')">
+            <button class="check-btn" 
+                onclick="sendResponse('phone', 'Por último, ¿qué mensaje deseas enviar?', 'message')">✔</button>
+        </div>
+
+        <div class="chat-message bot hidden" id="messageQuestion"></div>
+        <div class="input-container hidden" id="messageContainer">
+            <textarea id="message" class="chat-input" 
+                onkeypress="handleKeyPress(event, 'message', '', '')"></textarea>
+            <button class="send-btn" onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Vincular el script -->
+<script src="whatsapp.js"></script>
+
 
     <script src="scripts.js"></script>
 </body>

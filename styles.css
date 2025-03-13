@@ -599,3 +599,122 @@ button.next {
     padding: 10px;
     border-radius: 8px;
 }
+
+
+/* ESPACIO PARA EL BOTON FLOTANTE WHATSAPP */
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Botón flotante */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Contenedor del chat */
+.chat-container {
+    width: 300px;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: none;
+}
+
+/* Encabezado */
+.chat-header {
+    background: #25D366;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Cuerpo del chat */
+.chat-body {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mensajes */
+.chat-message {
+    background: #DCF8C6;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px 0;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #34B7F1;
+    color: white;
+}
+
+/* Contenedores de entrada */
+.input-container {
+    display: flex;
+    margin-top: 5px;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.check-btn,
+.send-btn {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Ocultar elementos */
+.hidden {
+    display: none;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 1px;
+    right: 1px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 140px; /* Aumenta el tamaño del botón */
+    height: 140px; /* Asegura que el área del botón sea mayor */
+}
+
+.whatsapp-logo {
+    width: 100%;  /* Usa todo el espacio del botón */
+    height: 100%; /* Usa todo el espacio del botón */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+
+/* hasta aqui va los estilos del boton de whatsapp */
