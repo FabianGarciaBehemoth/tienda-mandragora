@@ -718,3 +718,63 @@ body {
 
 
 /* hasta aqui va los estilos del boton de whatsapp */
+
+
+
+/* estilo fecha de entrega */
+
+.delivery-date {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d9534f; /* Rojo llamativo */
+    background-color: #f9f2f4; /* Fondo suave */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* animacion catalogo */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* estilos banner */
+
+#portada {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Ajusta el ancho máximo */
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#portada .carousel-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#portada .carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+#portada .carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra toda la imagen sin recortar */
+    display: block;
+    margin: auto;
+}

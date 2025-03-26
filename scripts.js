@@ -250,3 +250,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// suma fecha de envio //
+
+function calcularFechasEntrega() {
+    let elementos = document.querySelectorAll(".delivery-date-span");
+
+    elementos.forEach(elemento => {
+        let diasEntrega = parseInt(elemento.getAttribute("data-delivery-days")) || 0;
+        let fechaEntrega = new Date();
+        fechaEntrega.setDate(fechaEntrega.getDate() + diasEntrega);
+
+        let opciones = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        elemento.textContent = fechaEntrega.toLocaleDateString('es-ES', opciones);
+    });
+}
+
+// Llamar a la función cuando la página cargue
+calcularFechasEntrega();
+
+
+// animacion banner //
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carouselImages = document.querySelector("#portada .carousel-images");
+    const images = document.querySelectorAll("#portada .carousel-images img");
+    let index = 0;
+
+    function changeImage() {
+        index++;
+
+        if (index >= images.length) {
+            carouselImages.style.transition = "none"; // Quitamos la animación para el reinicio
+            carouselImages.style.transform = "translateX(0)"; // Vuelve a la primera imagen
+            index = 0;
+
+            setTimeout(() => {
+                carouselImages.style.transition = "transform 0.5s ease-in-out"; // Restauramos animación
+            }, 50); 
+        } else {
+            const offset = -index * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+        }
+    }
+
+    setInterval(changeImage, 3000); // Cambia cada 3 segundos
+});

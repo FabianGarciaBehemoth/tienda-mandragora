@@ -44,21 +44,33 @@
         </nav>
 
         <section id="inicio">
-        <div>
-            <section id="portada">
-                <a href="#catalogo">
-                    <img src="Img/Portada.png" alt="Portada de Tienda Mandragora">
-                </a>            
-            </section>
-        </div>
+            <div id="portada">
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="Img/Portada.png" alt="Portada 1">
+                        <img src="Img/Portada1.png" alt="Portada 2">
+                    </div>
+                </div>
+            </div>
         </section>
+        
+        
+        
 
         <section id="catalogo">
             <h2>Catálogo</h2>
 
-            <div class="seccion-bolsos">
-                <h2>Bolsos</h2>
+        <nav class="categorias-menu">
+            <ul>
+                <li><a href="#bolsos">Bolsos</a></li>
+                <li><a href="#relojes">Relojes</a></li>
+                <li><a href="#accesorios">Accesorios</a></li>
+            </ul>
+        </nav>
 
+
+        <div id="bolsos" class="seccion-bolsos">
+            <h2>Bolsos</h2>
             <div class="catalogo-grid">
                 
                 <!-- Producto 1 -->
@@ -87,6 +99,8 @@
                     </div>
                     <p>Un bolso único con diseño de cámara fotográfica.</p>
                     <p class="price"><span class="old-price">$93,700</span> <span class="new-price">$79,990</span></p>
+                    <p class="delivery-date">Entrega inmediata max: <span class="delivery-date-span" data-delivery-days="1"></span></p>
+
                     <!-- Botón Agregar al carrito -->
                     <button class="add-to-cart-btn" onclick="agregarAlCarrito(1, 'Bolso Cámara', 74990,'Img/Camara/IMG_2962.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
@@ -116,6 +130,8 @@
                     </div>
                     <p>Un diseño retro inspirado en los cassettes de los años 90.</p>
                     <p>Precio: $85,990</p>
+                    <p class="delivery-date">Entrega inmediata max: <span class="delivery-date-span" data-delivery-days="1"></span></p>
+
                     <button class="add-to-cart-btn" onclick="agregarAlCarrito(2, 'Cassette 90s', 85990,'Img/Cassette_90s/IMG_2955.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>
@@ -148,6 +164,8 @@
                     </div>
                     <p>Un accesorio perfecto para tus fiestas con un toque retro.</p>
                     <p>Precio: $90,000</p>
+                    <p class="delivery-date">Entrega inmediata max: <span class="delivery-date-span" data-delivery-days="1"></span></p>
+
                     <button class="add-to-cart-btn" onclick="agregarAlCarrito(3, 'Cassette Party', 90000, 'Img/Cassette_Party/IMG_2946.JPG')">
                         <i class="fas fa-cart-plus"></i> Agregar al carrito
                     </button>   
@@ -179,6 +197,8 @@
     </div>
     <p>Un radio elegante y moderno en color blanco, ideal para cualquier espacio.</p>
     <p class="price"><span class="old-price">$103,870</span> <span class="new-price">$79,900</span></p>
+    <p class="delivery-date">Entrega inmediata max: <span class="delivery-date-span" data-delivery-days="1"></span></p>
+
     <!-- Botón Agregar al carrito -->
     <button class="add-to-cart-btn" onclick="agregarAlCarrito(4, 'Radio Blanco', 79990, 'Img/Radio_Blanco/IMG_2926.JPG')">
         <i class="fas fa-cart-plus"></i> Agregar al carrito
@@ -214,86 +234,172 @@
     <p class="price">
         <span class="old-price">$103,870</span> 
         <span class="new-price">$79,900</span>
+        <p class="delivery-date">Entrega inmediata max: <span class="delivery-date-span" data-delivery-days="1"></span></p>
+
     </p>
     <button class="add-to-cart-btn" onclick="agregarAlCarrito(5, 'Radio Negro', 79990, 'Img/Radio_Negro/IMG_2936.JPG')">
         <i class="fas fa-cart-plus"></i> Agregar al carrito
     </button>
 </div>
-
+</div>
 
 </div>
 
 
 
 
-<div class="seccion-relojes">
+<div id="relojes" class="seccion-relojes">
     <h2>Relojes</h2>
 
     <div class="catalogo-grid">
 
-    <div class="product offer" id="reloj-inteligente">
-        <h3>Reloj Inteligente Deportivo HD <span class="discount-badge">¡15% OFF!</span></h3>
+        <div class="product offer" id="reloj-inteligente">
+            <h3>Reloj Inteligente Deportivo HD <span class="discount-badge">¡15% OFF!</span></h3>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <div class="image-container">
+                            <img src="Img/Reloj_Mujer/Reloj_1/2.jpg" alt="Reloj Inteligente HD 1" class="carousel-image">
+                        </div>
+                        <div class="image-container">
+                            <img src="Img/Reloj_Mujer/Reloj_1/3.jpg" alt="Reloj Inteligente HD 2" class="carousel-image">
+                        </div>
+                        <div class="image-container">
+                            <img src="Img/Reloj_Mujer/Reloj_1/4.jpg" alt="Reloj Inteligente HD 3" class="carousel-image">
+                        </div>
+                    </div>
+                </div>                      
+            </div>
+        
+            <p>Reloj inteligente con pantalla HD para hombres y mujeres.</p>
+            <p class="price"><span class="old-price">$210,000</span> <span class="new-price">$179,900</span></p>
+            <p class="delivery-date">Entrega estimada: <span class="delivery-date-span" data-delivery-days="9"></span></p>
 
+        
+            <!-- Botón Agregar al carrito -->
+            <button class="add-to-cart-btn" onclick="agregarAlCarrito(6, 'Reloj Inteligente Deportivo HD', 179900, 'Img/Reloj_Mujer/Reloj_1/2.jpg')">
+                <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </button>
+        </div>
+
+    <div class="product offer" id="reloj-inteligente-2">
+        <h3>Reloj Inteligente Deportivo HD <span class="discount-badge">¡15% OFF!</span></h3>
+        
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-images">
                     <div class="image-container">
-                        <img src="Img/Reloj_Mujer/Reloj_1/2.jpg" alt="Reloj Inteligente HD 1" class="carousel-image">
+                        <img src="Img/Reloj_Mujer/Reloj_2/Reloj_1.jpg" alt="Reloj Inteligente HD 1" class="carousel-image">
                     </div>
                     <div class="image-container">
-                        <img src="Img/Reloj_Mujer/Reloj_1/3.jpg" alt="Reloj Inteligente HD 2" class="carousel-image">
+                        <img src="Img/Reloj_Mujer/Reloj_2/Reloj_2.jpg" alt="Reloj Inteligente HD 2" class="carousel-image">
                     </div>
                     <div class="image-container">
-                        <img src="Img/Reloj_Mujer/Reloj_1/4.jpg" alt="Reloj Inteligente HD 3" class="carousel-image">
+                        <img src="Img/Reloj_Mujer/Reloj_2/Reloj_3.jpg" alt="Reloj Inteligente HD 3" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_2/Reloj_4.jpg" alt="Reloj Inteligente HD 4" class="carousel-image">
+                    </div>
+                </div>
+            </div>                      
+        </div>
+    
+        <p>Reloj Inteligente Multideportivo Pro /Compatible Iphone- Android</p>
+        <p class="price"><span class="old-price">$220,000</span> <span class="new-price">$189,900</span></p>
+        <p class="delivery-date">Entrega estimada: <span class="delivery-date-span" data-delivery-days="9"></span></p>
+
+        
+    
+        <!-- Botón Agregar al carrito -->
+        <button class="add-to-cart-btn" onclick="agregarAlCarrito(7, 'Reloj Inteligente Deportivo HD', 189900, 'Img/Reloj_Mujer/Reloj_2/Reloj_1.jpg')">
+            <i class="fas fa-cart-plus"></i> Agregar al carrito
+        </button>
+    </div>
+    
+
+    <div class="product offer" id="ruxingx-smartwatch">
+        <h3>RUXINGX Smartwatch  <span class="discount-badge">¡25% OFF!</span></h3>
+    
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_3/Relojmujer_1.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 1" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_3/Relojmujer_2.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 2" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_3/Relojmujer_3.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 3" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_3/Relojmujer_4.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 4" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_3/Relojmujer_5.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 5" class="carousel-image">
                     </div>
                 </div>
             </div>
         </div>
 
-        <p>Reloj inteligente con pantalla HD para hombres y mujeres.</p>
-        <p class="price"><span class="old-price">$210,000</span> <span class="new-price">$179,900</span></p>
+        <p>Reloj inteligente compatible con Android y iPhone, diseñado para monitorear actividad física y salud.</p>
+    
+        <p class="price"><span class="old-price">$258,555</span> <span class="new-price">$193,916</span></p>
+        
 
-        <!-- Botón Agregar al carrito -->
-        <button class="add-to-cart-btn" onclick="agregarAlCarrito(6, 'Reloj Inteligente Deportivo HD', 179900, 'Img/Reloj_Mujer/Reloj_1/2.jpg')">
-            <i class="fas fa-cart-plus"></i> Agregar al carrito
-        </button>
-
-        <a href="https://wa.me/3192641000?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Reloj%20Inteligente%20Deportivo%20HD*" 
-            class="btn" target="_blank">Compra por WhatsApp</a>
-    </div>
-
-    <div class="product offer" id="reloj-inteligente">
-        <h3>Reloj Inteligente Deportivo HD <span class="discount-badge">¡15% OFF!</span></h3>
-
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-images">
-                    <div class="image-container">
-                        <img src="Img/Reloj_Mujer/Reloj_1/2.jpg" alt="Reloj Inteligente HD 1" class="carousel-image">
-                    </div>
-                    <div class="image-container">
-                        <img src="Img/Reloj_Mujer/Reloj_1/3.jpg" alt="Reloj Inteligente HD 2" class="carousel-image">
-                    </div>
-                    <div class="image-container">
-                        <img src="Img/Reloj_Mujer/Reloj_1/4.jpg" alt="Reloj Inteligente HD 3" class="carousel-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <p>Reloj inteligente con pantalla HD para hombres y mujeres.</p>
-        <p class="price"><span class="old-price">$210,000</span> <span class="new-price">$179,900</span></p>
-
-        <!-- Botón Agregar al carrito -->
-        <button class="add-to-cart-btn" onclick="agregarAlCarrito(6, 'Reloj Inteligente Deportivo HD', 179900, 'Img/Reloj_Mujer/Reloj_1/2.jpg')">
-            <i class="fas fa-cart-plus"></i> Agregar al carrito
-        </button>
-
-        <a href="https://wa.me/3192641000?text=Hola%2C%20estoy%20interesado(a)%20en%20este%20producto%3A%20*Reloj%20Inteligente%20Deportivo%20HD*" 
-            class="btn" target="_blank">Compra por WhatsApp</a>
-    </div>
+        <p class="delivery-date">Entrega estimada: <span class="delivery-date-span" data-delivery-days="8"></span></p>
 
     
+        <!-- Botón Agregar al carrito -->
+        <button class="add-to-cart-btn" onclick="agregarAlCarrito(10, 'RUXINGX Smartwatch Mujer', 193916, 'Img/Reloj_Mujer/Reloj_3/Relojmujer_1.jpg')">
+            <i class="fas fa-cart-plus"></i> Agregar al carrito
+        </button>
+    
+    </div>
+    
+    <div class="product" id="ruxingx-smartwatch-4">
+        <h3>RUXINGX Smartwatch Mujer Edición Premium</h3>
+    
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_4/Mujer1.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 1" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_4/Mujer2.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 2" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_4/Mujer3.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 3" class="carousel-image">
+                    </div>
+                    <div class="image-container">
+                        <img src="Img/Reloj_Mujer/Reloj_4/Mujer4.jpg" alt="RUXINGX Smartwatch Mujer - Imagen 4" class="carousel-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>Reloj inteligente compatible con Android y iPhone, diseñado para monitorear actividad física y salud.</p>
+
+        <p class="price"><span class="new-price">$190,601</span></p>
+
+        <p class="delivery-date">Entrega estimada: <span class="delivery-date-span" data-delivery-days="9"></span></p>
+    
+        <!-- Botón Agregar al carrito -->
+        <button class="add-to-cart-btn" onclick="agregarAlCarrito(11, 'RUXINGX Smartwatch Mujer Edición Premium', 190601, 'Img/Reloj_Mujer/Reloj_4/Mujer1.jpg')">
+            <i class="fas fa-cart-plus"></i> Agregar al carrito
+        </button>
+    
+    </div>
+    
+</div>
+
+<div id="accesorios" class="seccion-accesorios">
+    <h2>Accesorios</h2>
+    <div class="catalogo-grid">
+        <p class="coming-soon">✨ Próximamente... ✨</p>
+    </div>
 </div>
 
 </div>
