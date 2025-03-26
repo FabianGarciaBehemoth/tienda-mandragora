@@ -272,25 +272,19 @@ calcularFechasEntrega();
 // animacion banner //
 
 document.addEventListener("DOMContentLoaded", function () {
-    const carouselImages = document.querySelector("#portada .carousel-images");
-    const images = document.querySelectorAll("#portada .carousel-images img");
+    const carouselImages = document.querySelector(".banner-images");
+    const images = document.querySelectorAll(".banner-images img");
     let index = 0;
 
     function changeImage() {
         index++;
 
         if (index >= images.length) {
-            carouselImages.style.transition = "none"; // Quitamos la animación para el reinicio
-            carouselImages.style.transform = "translateX(0)"; // Vuelve a la primera imagen
-            index = 0;
-
-            setTimeout(() => {
-                carouselImages.style.transition = "transform 0.5s ease-in-out"; // Restauramos animación
-            }, 50); 
-        } else {
-            const offset = -index * 100;
-            carouselImages.style.transform = `translateX(${offset}%)`;
+            index = 0; // Reinicia el índice al llegar al final
         }
+
+        const offset = -index * 100; // Mueve la imagen de forma exacta
+        carouselImages.style.transform = `translateX(${offset}%)`;
     }
 
     setInterval(changeImage, 3000); // Cambia cada 3 segundos
